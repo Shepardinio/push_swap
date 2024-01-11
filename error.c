@@ -6,8 +6,15 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:57:04 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/11 15:59:45 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/11 21:10:57 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	error_exit()
+#include "./include/push_swap.h"
+
+void	error_exit(t_list **a)
+{
+	free_stack(a);
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
+}
