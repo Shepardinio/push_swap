@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isnumeric.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 16:37:17 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/11 15:00:00 by mel-yand         ###   ########.fr       */
+/*   Created: 2024/01/11 15:57:23 by mel-yand          #+#    #+#             */
+/*   Updated: 2024/01/11 15:58:03 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../ft_libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-
-typedef struct s_list
+int ft_isnumeric(char *str)
 {
-	void			*content;
-	struct s_list	*next;
-}t_list;
+	int i;
 
-#endif
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (!str[i])
+		return (0);
+	while(str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}

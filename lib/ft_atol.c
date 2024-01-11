@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 16:37:17 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/11 15:00:00 by mel-yand         ###   ########.fr       */
+/*   Created: 2024/01/11 15:57:13 by mel-yand          #+#    #+#             */
+/*   Updated: 2024/01/11 15:57:16 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../ft_libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-
-typedef struct s_list
+long	ft_atol(const char *str)
 {
-	void			*content;
-	struct s_list	*next;
-}t_list;
+	int	i;
+	int	n;
+	long	value;
 
-#endif
+	i = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	n = 1;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			n = n * (-1);
+		i++;
+	}
+	value = 0;
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+	{
+		value = value * 10 + (str[i] - 48);
+		i++;
+	}
+	return (value * n);
+}

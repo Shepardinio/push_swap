@@ -1,10 +1,12 @@
-NAME = push_swap.a
+NAME = push_swap
 
-SRC = ./src
+LIBFT_NAME = libft.a
+
+SRC = push_swap.c
 
 OBJS = ${SRC:.c=.o}
 
-HEAD = ./push_swap.h
+HEAD = ./include
 
 AR = ar rc
 
@@ -14,7 +16,10 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -g3
 
-${NAME}: 	${OBJS} ${HEAD}
+${LIBFT_NAME}:
+	@make -C lib
+
+${NAME}: 	${LIBFT_NAME} ${OBJS} ${HEAD}
 			${CC} ${CFLAGS} -c ${SRC}
 			${AR} ${NAME} ${OBJS}
 
@@ -23,10 +28,12 @@ all: ${NAME}
 
 .PHONY: clean
 clean:
+	@make -C lib clean
 	rm -f ${OBJS}
 
 .PHONY: fclean
 fclean: clean
+	@make -C lib fclean
 	rm -f ${NAME}
 
 .PHONY: re

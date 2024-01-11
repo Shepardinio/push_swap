@@ -70,7 +70,7 @@ clean:
 	rm -f ${OBJS}
 
 .PHONY: fclean
-fclean: clean
+fclean:
 	rm -f ${NAME}
 
 .PHONY: re
