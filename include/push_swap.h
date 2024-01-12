@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:37:17 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/11 20:53:45 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/12 20:50:12 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdio.h>
 
-typedef struct s_list
+typedef struct s_stack
 {
-	void			*content;
-	struct s_list	*next;
-}t_list;
+	int			nb;
+	struct s_stack	*next;
+}t_stack;
 
 #endif
