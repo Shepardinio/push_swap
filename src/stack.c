@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emauduit <emauduit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:56:37 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/12 21:10:34 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:39:43 by emauduit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/push_swap.h"
+#include "../include/push_swap.h"
 
 t_stack	*stack_last(t_stack *stack)
 {
@@ -44,22 +44,20 @@ void	stackadd_back(t_stack **stack, int nbr)
 	}
 }
 
-int main()
-{
-	t_stack *list;
-	t_stack *tmp;
-	t_stack *head;
-
+// int main()
+// {
+// 	t_stack *list;
+// 	t_stack *tmp;
 	
-	list = NULL;
-	stackadd_back(&list, 12);
-	stackadd_back(&list, 13);
-	stackadd_back(&list, 14);
-	tmp = list;
-	while (tmp)
-	{
-		printf("%d\n", tmp->nb);
-		tmp = tmp->next;
-	}
-	return (0);
-}
+// 	list = NULL;
+// 	stackadd_back(&list, 139);
+// 	stackadd_back(&list, 13);
+// 	stackadd_back(&list, 12);
+// 	tmp = list;
+// 	while (tmp)
+// 	{
+// 		printf("%d\n", tmp->nb);
+// 		tmp = tmp->next;
+// 	}
+// 	return (0);
+// }

@@ -1,40 +1,41 @@
 NAME = push_swap
 
-LIBFT_NAME = libft.a
-
-SRC = push_swap.c
-
-OBJS = ${SRC:.c=.o}
-
-HEAD = ./include
-
-AR = ar rc
-
-RM = rm -f
-
 CC = cc
+CFLAGS = -Wall -Werror -Wextra
 
-CFLAGS = -Wall -Wextra -Werror -g3
+LIBFT = lib/libft.a
+SRC_DIR = ./src
+SRC := error.c \
+		print_stack.c \
+		push_swap.c \
+		stack.c
 
-${LIBFT_NAME}:
-	@make -C lib
+SRC := $(addprefix $(SRC_DIR)/, $(SRC))
+OBJ_DIR = obj
+OBJ := $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-${NAME}: 	${LIBFT_NAME} ${OBJS} ${HEAD}
-			${CC} ${CFLAGS} -c ${SRC}
-			${AR} ${NAME} ${OBJS}
+all: $(NAME)
+	@printf "\e[32mPush Swap OK\e[0m\n"
+		
+$(NAME): $(OBJ)
+	@$(MAKE) -C lib
+	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
-.PHONY: all
-all: ${NAME}
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) -c $< -o $@ 
 
-.PHONY: clean
+norminette:
+	norminette $(SRC_DIR)
+	norminette lib
+	norminette ./include/
+
 clean:
-	@make -C lib clean
-	rm -f ${OBJS}
+	@$(MAKE) -C lib clean
+	@rm -rf $(OBJ_DIR)
 
-.PHONY: fclean
 fclean: clean
-	@make -C lib fclean
-	rm -f ${NAME}
+	@$(MAKE) -C lib fclean
+	@rm -f $(NAME)
 
-.PHONY: re
 re: fclean all
