@@ -1,14 +1,15 @@
 NAME = push_swap
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g3
 
 LIBFT = lib/libft.a
 SRC_DIR = ./src
-SRC := error.c \
+SRC := 	error.c \
 		print_stack.c \
 		push_swap.c \
-		stack.c
+		stack.c\
+		utils_parsing.c
 
 SRC := $(addprefix $(SRC_DIR)/, $(SRC))
 OBJ_DIR = obj

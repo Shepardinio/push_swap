@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emauduit <emauduit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:57:04 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/15 15:28:24 by emauduit         ###   ########.fr       */
+/*   Updated: 2024/01/15 16:06:56 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void	free_stack(t_stack **stack)
 void	error_exit(t_stack **stack)
 {
 	free_stack(stack);
-	ft_putstr_fd("Error\n", 2);
+	ft_putstr_fd("Errore\n", 2);
 	exit(1);
 }

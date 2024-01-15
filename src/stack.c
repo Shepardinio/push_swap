@@ -3,14 +3,62 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emauduit <emauduit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:56:37 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/15 15:39:43 by emauduit         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:33:59 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	ft_parsequote(t_stack **stack, char *argv)
+{
+	int		i;
+	int		count;
+	long	nbr;
+
+	i = 0;
+	count = 0;
+	int j = 0;
+	if (!argv[i])
+		return ;
+	while (argv[i] == ' ')
+	{
+		if (!argv[i + 1])
+			return ;
+		i++;
+	}
+	while (argv[j] && (ft_isdigit(argv[j])))
+	{
+		count++;
+		j++;
+	}
+	nbr = ft_atol(argv + i, count);
+	if (nbr < INT_MIN || nbr > INT_MAX)
+		error_exit(stack);
+	stackadd_back(stack, nbr);
+	count = 0;
+	while (argv[i] && (ft_isdigit(argv[i]) || argv[i] == ' '))
+	{
+		count++;
+		// printf("count = %d\n", count);
+		if (argv[i + 1] == ' ')
+		{	
+			i++;
+			// printf("argv + i = %s\n", argv + i - count);
+			nbr = ft_atol(argv + i, count);
+			if (nbr < INT_MIN || nbr > INT_MAX)
+				error_exit(stack);
+			// is_duplicate(stack, nbr);
+			stackadd_back(stack, nbr);
+			count = 0;
+		}
+		i++;
+		while (argv[i] == ' ')
+			i++;
+	}
+}
 
 t_stack	*stack_last(t_stack *stack)
 {

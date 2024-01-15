@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   utils_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 15:57:13 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/15 18:10:57 by mel-yand         ###   ########.fr       */
+/*   Created: 2024/01/15 18:25:27 by mel-yand          #+#    #+#             */
+/*   Updated: 2024/01/15 18:33:17 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
-long	ft_atol(const char *str, int count)
+void	is_duplicate(t_stack **stack, long nbr)
 {
-	int	i;
-	int	n;
-	long	value;
+	t_stack *tmp;
 
-	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	n = 1;
-	if (str[i] == '-' || str[i] == '+')
+	tmp = *stack;
+	while (tmp)
 	{
-		if (str[i] == '-')
-			n = n * (-1);
-		i++;
+		printf("%d\n", tmp->nb);
+		if ((int)nbr == tmp->nb)
+			error_exit(stack);
+		tmp = tmp->next;
 	}
-	value = 0;
-	while (str[i] && (str[i] >= '0' && str[i] <= '9') && i <= count)
-	{
-		value = value * 10 + (str[i] - 48);
-		i++;
-	}
-	return (value * n);
 }
