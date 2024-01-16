@@ -6,33 +6,30 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:51:28 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/15 18:12:01 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:48:38 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int		arg_to_stack(t_stack **stack, char **argv)
+static int		arg_to_stack(t_stack **stack_a, char **argv)
 {
-	// long	nbr;
 	int		i;
+	int		j;
+	char	**arr;
 
 	i = 1;
 	while (argv[i])
 	{
-		// if (argv[i][0] == '\"')
-		ft_parsequote(stack, argv[i]);
-		// else
-		// {
-		// 	printf("argv[%d][0] = %c\n", i, argv[i][0]);
-		// 	if (!ft_isnumeric(argv[i]))
-		// 		error_exit(stack);
-		// 	nbr = ft_atol(argv[i]);
-		// 	if (nbr < INT_MIN || nbr > INT_MAX)
-		// 		error_exit(stack);
-		// 	stackadd_back(stack, nbr);
-		// }
-		i++;	
+		j = 0;
+		arr = ft_split(argv[i], ' ');
+		while (arr[j])
+		{
+			check_error(stack_a, arr[j]);
+			j++;
+		}
+		free_split(arr);
+		i++;
 	}
 	return (0);
 }

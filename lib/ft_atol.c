@@ -6,13 +6,13 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:57:13 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/15 18:10:57 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:46:18 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_atol(const char *str, int count)
+long	ft_atol(const char *str)
 {
 	int	i;
 	int	n;
@@ -29,7 +29,7 @@ long	ft_atol(const char *str, int count)
 		i++;
 	}
 	value = 0;
-	while (str[i] && (str[i] >= '0' && str[i] <= '9') && i <= count)
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
 		value = value * 10 + (str[i] - 48);
 		i++;
