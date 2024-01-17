@@ -6,13 +6,13 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:57:04 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/16 17:46:43 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:11:22 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static void	free_stack(t_stack **stack)
+void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 

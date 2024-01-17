@@ -9,7 +9,9 @@ SRC := 	error.c \
 		print_stack.c \
 		push_swap.c \
 		stack.c\
-		utils_parsing.c
+		utils_parsing.c\
+		swap.c\
+		push.c
 
 SRC := $(addprefix $(SRC_DIR)/, $(SRC))
 OBJ_DIR = obj

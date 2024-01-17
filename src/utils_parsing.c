@@ -6,13 +6,13 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 18:25:27 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/16 17:47:02 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/17 13:05:10 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int	is_duplicate(t_stack *stack, long nbr)
+int	is_duplicate(t_stack *stack, long nbr)
 {
 	if (!stack)
 		return (1);
