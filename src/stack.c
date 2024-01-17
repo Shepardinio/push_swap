@@ -6,13 +6,13 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:56:37 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/16 17:47:36 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/17 21:18:10 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static t_stack	*stack_last(t_stack *stack)
+t_stack	*stack_last(t_stack *stack)
 {
 	if (stack == NULL)
 		return (NULL);

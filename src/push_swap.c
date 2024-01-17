@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:51:28 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/17 15:53:25 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/17 20:44:30 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,6 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	arg_to_stack(&stack_a, argv);
-	print_stack(stack_a, stack_b);
-	pb(&stack_a, &stack_b);
-	print_stack(stack_a, stack_b);
-	pb(&stack_a, &stack_b);
 	print_stack(stack_a, stack_b);
 	free_stack(&stack_a);
 	return (0);

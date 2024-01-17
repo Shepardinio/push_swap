@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:37:17 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/17 15:13:05 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/17 21:27:42 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
 }t_stack;
 
 void	stackadd_back(t_stack **stack, int nbr);
+t_stack	*stack_last(t_stack *stack);
 void	error_exit(t_stack **stack);
 void	free_split(char **arr);
 void	print_stack(t_stack *stack_a, t_stack *stack_b);
@@ -36,6 +37,7 @@ void	swap(t_stack **stack);
 void	sa(t_stack **stack_a);
 void	sb(t_stack **stack_b);
 void	ss(t_stack **stack_a, t_stack **stack_b);
-void	pb(t_stack **stack_a, t_stack **stack_b);
+void	pb(t_stack **stack_b, t_stack **stack_a);
+void	pa(t_stack **stack_a, t_stack **stack_b);
 
 #endif
