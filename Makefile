@@ -12,7 +12,8 @@ SRC := 	error.c \
 		utils_parsing.c\
 		swap.c\
 		push.c\
-		rotate.c
+		rotate.c\
+		reverse_rotate.c
 
 SRC := $(addprefix $(SRC_DIR)/, $(SRC))
 OBJ_DIR = obj

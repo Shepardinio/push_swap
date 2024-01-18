@@ -1,44 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 15:04:59 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/18 17:11:45 by mel-yand         ###   ########.fr       */
+/*   Created: 2024/01/18 17:30:41 by mel-yand          #+#    #+#             */
+/*   Updated: 2024/01/18 18:33:28 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	pb(t_stack **stack_b, t_stack **stack_a)
+void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
-	
-	if (!*stack_a)
-		return ;
-	tmp = *stack_a;
-	*stack_a = (*stack_a)->next;
-	tmp->next = NULL;
-	if (*stack_b)
-		tmp->next = *stack_b;
-	*stack_b = tmp;
-	printf("pb\n");
-}
+	t_stack	*last;
 
-void	pa(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack	*tmp;
-
-	if (!stack_b)
+	if (!*stack)
 		return ;
-	
-	tmp = *stack_b;
-	*stack_b = (*stack_b)->next;
-	tmp->next = NULL;
-	if (*stack_a)
-		tmp->next = *stack_a;
-	*stack_a = tmp;
-	printf("pa\n");
+	tmp = *stack;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	latst = stack_last(*stack);
 }
