@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:37:17 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/18 19:14:44 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:54:53 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_stack	*stack_last(t_stack *stack);
 void	error_exit(t_stack **stack);
 void	free_split(char **arr);
 void	print_stack(t_stack *stack_a, t_stack *stack_b);
-void	check_error(t_stack **stack_a, char *str);
+int		check_error(t_stack **stack_a, char *str);
 void	free_stack(t_stack **stack);
 int		is_duplicate(t_stack *stack, long nbr);
 void	swap(t_stack **stack);

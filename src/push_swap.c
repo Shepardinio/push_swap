@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:51:28 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/18 19:14:10 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:06:33 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ static int		arg_to_stack(t_stack **stack_a, char **argv)
 		arr = ft_split(argv[i], ' ');
 		while (arr[j])
 		{
-			check_error(stack_a, arr[j]);
+			if (check_error(stack_a, arr[j]))
+			{
+				free_split(arr);
+				error_exit(stack_a);
+			}
 			j++;
 		}
 		free_split(arr);
@@ -46,18 +50,6 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	arg_to_stack(&stack_a, argv);
-	print_stack(stack_a, stack_b);
-	pb(&stack_b, &stack_a);
-	pb(&stack_b, &stack_a);
-	pb(&stack_b, &stack_a);
-	pb(&stack_b, &stack_a);
-	print_stack(stack_a, stack_b);
-	rr(&stack_a, &stack_b);
-	rr(&stack_a, &stack_b);
-	print_stack(stack_a, stack_b);
-	ss(&stack_a, &stack_b);
-	print_stack(stack_a, stack_b);
-	rrr(&stack_a, &stack_b);
 	print_stack(stack_a, stack_b);
 	free_stack(&stack_a);
 	return (0);
