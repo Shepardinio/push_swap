@@ -6,11 +6,11 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 17:51:45 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/17 21:05:26 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/20 11:18:14 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
 void	swap(t_stack **stack)
 {

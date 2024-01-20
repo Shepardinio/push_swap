@@ -1,44 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 15:04:59 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/18 17:11:45 by mel-yand         ###   ########.fr       */
+/*   Created: 2024/01/17 20:49:01 by mel-yand          #+#    #+#             */
+/*   Updated: 2024/01/20 11:32:13 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
-void	pb(t_stack **stack_b, t_stack **stack_a)
+void	rotate(t_stack **stack)
 {
 	t_stack	*tmp;
-	
-	if (!*stack_a)
+	t_stack	*last;
+
+	if (!*stack)
 		return ;
-	tmp = *stack_a;
-	*stack_a = (*stack_a)->next;
+	tmp = *stack;
+	*stack = (*stack)->next;
 	tmp->next = NULL;
-	if (*stack_b)
-		tmp->next = *stack_b;
-	*stack_b = tmp;
-	printf("pb\n");
+	last = stack_last(*stack);
+	last->next = tmp;
 }
 
-void	pa(t_stack **stack_a, t_stack **stack_b)
+void	ra(t_stack **stack_a)
 {
-	t_stack	*tmp;
+	rotate(stack_a);
+	printf("ra\n");
+}
 
-	if (!stack_b)
-		return ;
-	
-	tmp = *stack_b;
-	*stack_b = (*stack_b)->next;
-	tmp->next = NULL;
-	if (*stack_a)
-		tmp->next = *stack_a;
-	*stack_a = tmp;
-	printf("pa\n");
+void	rb(t_stack **stack_b)
+{
+	rotate(stack_b);
+	printf("rb\n");
+}
+
+void	rr(t_stack **stack_a, t_stack **stack_b)
+{
+	rotate(stack_a);
+	rotate(stack_b);
+	printf("rr\n");
 }

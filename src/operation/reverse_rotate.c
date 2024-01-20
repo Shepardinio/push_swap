@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 20:49:01 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/18 17:15:07 by mel-yand         ###   ########.fr       */
+/*   Created: 2024/01/18 17:30:41 by mel-yand          #+#    #+#             */
+/*   Updated: 2024/01/20 11:22:13 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
-void	rotate(t_stack **stack)
+void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*last;
@@ -20,27 +20,29 @@ void	rotate(t_stack **stack)
 	if (!*stack)
 		return ;
 	tmp = *stack;
-	*stack = (*stack)->next;
-	tmp->next = NULL;
+	while (tmp->next->next)
+		tmp = tmp->next;
 	last = stack_last(*stack);
-	last->next = tmp;
+	tmp->next = NULL;
+	last->next = *stack;
+	*stack = last;
 }
 
-void	ra(t_stack **stack_a)
+void	rra(t_stack **stack_a)
 {
-	rotate(stack_a);
-	printf("ra\n");
+	reverse_rotate(stack_a);
+	printf("rra\n");
 }
 
-void	rb(t_stack **stack_b)
+void	rrb(t_stack **stack_b)
 {
-	rotate(stack_b);
-	printf("rb\n");
+	reverse_rotate(stack_b);
+	printf("rrb\n");
 }
 
-void	rr(t_stack **stack_a, t_stack **stack_b)
+void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
-	rotate(stack_a);
-	rotate(stack_b);
-	printf("rr\n");
+	reverse_rotate(stack_a);
+	reverse_rotate(stack_b);
+	printf("rrr\n");
 }

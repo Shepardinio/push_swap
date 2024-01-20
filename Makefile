@@ -10,10 +10,10 @@ SRC := 	error.c \
 		push_swap.c \
 		stack.c\
 		utils_parsing.c\
-		swap.c\
-		push.c\
-		rotate.c\
-		reverse_rotate.c
+		./operation/swap.c\
+		./operation/push.c\
+		./operation/rotate.c\
+		./operation/reverse_rotate.c
 
 SRC := $(addprefix $(SRC_DIR)/, $(SRC))
 OBJ_DIR = obj
