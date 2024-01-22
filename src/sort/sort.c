@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:11:13 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/22 12:10:40 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:58:45 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,17 @@ void	sort_three(t_stack **stack)
 		rra(stack);
 	if ((*stack)->nb > (*stack)->next->nb)
 		sa(stack);
+}
+
+void	sort(t_stack **a, t_stack **b)
+{
+	if (!is_sorted_stack(a) && stack_len(*a) > 3)
+		pb(b,a);
+	if (!is_sorted_stack(a) && stack_len(*a) > 3)
+		pb(b,a);
+	while (!is_sorted_stack && stack_len(*a) > 3)
+	{
+		get_cost_a(a, b);
+		
+	}
 }

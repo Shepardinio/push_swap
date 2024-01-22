@@ -6,17 +6,17 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:56:37 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/22 10:58:48 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:19:40 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	is_sorted_stack(t_stack *stack)
+int	is_sorted_stack(t_stack **stack)
 {
 	t_stack *tmp;
 
-	tmp = stack;
+	tmp = *stack;
 	while (tmp->next)
 	{
 		if (tmp->nb > tmp->next->nb)
