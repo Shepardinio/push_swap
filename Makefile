@@ -8,12 +8,14 @@ SRC_DIR = ./src
 SRC := 	error.c \
 		print_stack.c \
 		push_swap.c \
-		stack.c\
+		utils_stack.c\
 		utils_parsing.c\
 		./operation/swap.c\
 		./operation/push.c\
 		./operation/rotate.c\
-		./operation/reverse_rotate.c
+		./operation/reverse_rotate.c\
+		./sort/sort.c\
+		./sort/find.c
 
 SRC := $(addprefix $(SRC_DIR)/, $(SRC))
 OBJ_DIR = obj
