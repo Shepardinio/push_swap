@@ -14,6 +14,7 @@ SRC := 	error.c \
 		./operation/push.c\
 		./operation/rotate.c\
 		./operation/reverse_rotate.c\
+		./sort/sort_utils.c\
 		./sort/sort.c\
 		./sort/find.c\
 		./sort/set_a.c

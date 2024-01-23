@@ -6,59 +6,45 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:20:13 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/22 17:25:18 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/23 20:35:24 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	set_index(t_stack **stack)
+void	get_cost(t_stack *a, t_stack *b)
 {
-	t_stack	*tmp;
-	int		i;
-	int		len;
-
-	tmp = *stack;
-	i = 0;
-	len = stack_len(*stack);
-	while (tmp)
-	{
-		tmp->index = i;
-		if (i < (len / 2))
-			tmp->above_or_not = 0;
-		else
-			tmp->above_or_not = 1;
-		tmp = tmp->next;
-		i++;
-	}
-}
-
-t_stack	*get_highest(t_stack *stack)
-{
-	t_stack	*highest;
-
-	highest = stack;
-	while (stack)
-	{
-		if (highest->nb < stack->nb)
-			highest = stack;
-		stack = stack->next;
-	}
-	return (highest);
+	
 }
 
 void	cost_target(t_stack *a, t_stack *b)
 {
 	t_stack		*target;
 	t_stack		*tmp_b;
-	long int	hight;
+	t_stack		*s_hight;
+	t_stack		*s_low;
+	long int	close;
 
 	while (a)
 	{
 		tmp_b = b;
-		while (b)
+		close = LONG_MIN;
+		s_hight = get_highest(b);
+		s_low = get_lowest(b);
+		while (tmp_b)
 		{
-			
+			if (tmp_b->nb < a->nb && tmp_b->nb > close)
+			{
+				close = tmp_b->nb;
+				target = tmp_b;
+			}
+			tmp_b = tmp_b->next;
 		}
+		if ((a->nb < s_low->nb) || (a->nb > s_hight->nb))
+			a->target = s_hight;
+		else
+			a->target = target;
+		a = a->next;
 	}
+	get_cost(a, b);
 }

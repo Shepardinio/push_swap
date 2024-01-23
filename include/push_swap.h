@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:37:17 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/22 16:40:50 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:59:11 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	stackadd_back(t_stack **stack, int nbr);
 int		is_duplicate(t_stack *stack, long nbr);
 t_stack	*stack_last(t_stack *stack);
 t_stack	*get_highest(t_stack *stack);
+t_stack *get_lowest(t_stack *stack);
 int		stack_len(t_stack *stack);
 int		is_sorted_stack(t_stack **stack);
 void	sort_three(t_stack **stack);
@@ -59,5 +60,9 @@ void	reverse_rotate(t_stack **stack);
 void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
+
+void	get_cost_a(t_stack **a, t_stack **b);
+void	cost_target(t_stack *a, t_stack *b);
+void	get_cost(t_stack *a, t_stack *b);
 
 #endif

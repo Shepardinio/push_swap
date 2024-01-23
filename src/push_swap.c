@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:51:28 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/22 15:06:25 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:34:24 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	main(int argc, char **argv)
 {
 	t_stack *stack_a;
 	t_stack *stack_b;
+	// t_stack *tmp;
 
 	if (argc <= 1)
 		return (0);
@@ -50,6 +51,14 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	arg_to_stack(&stack_a, argv);
+	// pb(&stack_b, &stack_a);
+	// pb(&stack_b, &stack_a);
+	// pb(&stack_b, &stack_a);
+	// pb(&stack_b, &stack_a);
+	// pb(&stack_b, &stack_a);
+	// pb(&stack_b, &stack_a);
+	// pb(&stack_b, &stack_a);
+	// pb(&stack_b, &stack_a);
 	if (!is_sorted_stack(&stack_a))
 	{
 		if (stack_len(stack_a) == 2)
@@ -59,14 +68,15 @@ int	main(int argc, char **argv)
 		else
 			sort(&stack_a, &stack_b);
 	}
-	print_stack(stack_a, stack_b);
+
+	// print_stack(stack_a, stack_b);
+	// tmp = stack_a;
+	// while (tmp)
+	// {
+	// 	printf("index->%d nb->%d target->%d aon->%d\n", tmp->index, tmp->nb, tmp->target->nb, tmp->above_or_not);
+	// 	tmp = tmp->next;
+	// }
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
 }
-
-	// printf("%d\n", stack_len(stack_a));
-	// tmp = get_highest(stack_a);
-	// printf("highest->%d\n", tmp->nb);
-	// sort_three(&stack_a);
-	// print_stack(stack_a, stack_b);
