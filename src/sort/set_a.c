@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 16:22:48 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/23 14:51:54 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:17:08 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,7 @@ void	get_cost_a(t_stack **a, t_stack **b)
 {
 	set_index(a);
 	set_index(b);
-	cost_target(*a, *b);
+	find_target(*a, *b);
+	cost_a(*a, *b);
+	// set_cost_a();
 }

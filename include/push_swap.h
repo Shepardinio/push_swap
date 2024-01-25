@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:37:17 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/23 19:59:11 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:03:48 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 void	get_cost_a(t_stack **a, t_stack **b);
-void	cost_target(t_stack *a, t_stack *b);
-void	get_cost(t_stack *a, t_stack *b);
+void	find_target(t_stack *a, t_stack *b);
+void	cost_a(t_stack *a, t_stack *b);
 
 #endif
