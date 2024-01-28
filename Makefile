@@ -16,8 +16,9 @@ SRC := 	error.c \
 		./operation/reverse_rotate.c\
 		./sort/sort_utils.c\
 		./sort/sort.c\
-		./sort/find.c\
-		./sort/set_a.c
+		./sort/sort_action.c\
+		./sort/set_a.c\
+		./sort/set_b.c
 
 SRC := $(addprefix $(SRC_DIR)/, $(SRC))
 OBJ_DIR = obj

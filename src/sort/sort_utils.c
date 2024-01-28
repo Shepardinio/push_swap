@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:19 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/23 20:31:50 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/28 16:07:40 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ void	set_index(t_stack **stack)
 	while (tmp)
 	{
 		tmp->index = i;
+		tmp->cheap = 0;
 		if (i < (len / 2))
-			tmp->above_or_not = 0;
+			tmp->above = 0;
 		else
-			tmp->above_or_not = 1;
+			tmp->above = 1;
 		tmp = tmp->next;
 		i++;
 	}
@@ -59,4 +60,15 @@ t_stack *get_lowest(t_stack *stack)
 		stack = stack->next;
 	}
 	return (lowest);
+}
+
+t_stack	*find_cheapest(t_stack *a)
+{
+	while (a)
+	{
+		if (a->cheap == 1)
+			return (a);
+		a = a->next;
+	}
+	return (NULL);
 }

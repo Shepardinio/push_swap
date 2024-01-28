@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:37:17 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/25 18:03:48 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/28 19:13:04 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ typedef struct s_stack
 	int			nb;
 	int			cost;
 	int			index;
-	int			above_or_not;
+	int			above;
+	int			cheap;
 	struct s_stack	*next;
 	struct s_stack	*target;
 }t_stack;
@@ -64,5 +65,14 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 void	get_cost_a(t_stack **a, t_stack **b);
 void	find_target(t_stack *a, t_stack *b);
 void	cost_a(t_stack *a, t_stack *b);
+void	set_cheapest(t_stack *a);
+t_stack	*find_cheapest(t_stack *a);
+
+void	a_to_b(t_stack **a, t_stack **b);
+void	rotate_both(t_stack **a, t_stack **b, t_stack *cheap);
+void	reverse_both(t_stack **a, t_stack **b, t_stack *cheap);
+void	node_top_a(t_stack **a, t_stack *cheap);
+void	node_top_b(t_stack **b, t_stack *cheap);
+void	b_to_a(t_stack **b, t_stack **a);
 
 #endif
