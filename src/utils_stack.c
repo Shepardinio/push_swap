@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:56:37 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/25 17:52:47 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/29 19:47:06 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,3 @@ void	stackadd_back(t_stack **stack, int nbr)
 		last->next = new;
 	}
 }
-

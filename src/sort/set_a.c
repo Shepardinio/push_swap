@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 16:22:48 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/28 15:06:54 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/29 10:32:07 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	cost_a(t_stack *a, t_stack *b)
 	int	len_a;
 	int	len_b;
 	int	cost;
-	
+
 	len_a = stack_len(a);
 	len_b = stack_len(b);
 	while (a)
@@ -36,20 +36,16 @@ void	cost_a(t_stack *a, t_stack *b)
 	}
 }
 
-void	find_target(t_stack *a, t_stack *b)
+void	find_target_a(t_stack *a, t_stack *b)
 {
 	t_stack		*target;
 	t_stack		*tmp_b;
-	t_stack		*s_hight;
-	t_stack		*s_low;
 	long int	close;
 
 	while (a)
 	{
 		tmp_b = b;
 		close = LONG_MIN;
-		s_hight = get_highest(b);
-		s_low = get_lowest(b);
 		while (tmp_b)
 		{
 			if (tmp_b->nb < a->nb && tmp_b->nb > close)
@@ -59,8 +55,8 @@ void	find_target(t_stack *a, t_stack *b)
 			}
 			tmp_b = tmp_b->next;
 		}
-		if ((a->nb < s_low->nb) || (a->nb > s_hight->nb))
-			a->target = s_hight;
+		if (close == LONG_MIN)
+			a->target = get_highest(b);
 		else
 			a->target = target;
 		a = a->next;
@@ -91,7 +87,7 @@ void	get_cost_a(t_stack **a, t_stack **b)
 {
 	set_index(a);
 	set_index(b);
-	find_target(*a, *b);
+	find_target_a(*a, *b);
 	cost_a(*a, *b);
 	set_cheapest(*a);
 }
