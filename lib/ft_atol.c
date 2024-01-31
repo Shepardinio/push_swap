@@ -6,17 +6,17 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:57:13 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/16 14:46:18 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/30 17:32:40 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_atol(const char *str)
+long long	ft_atol(const char *str)
 {
 	int	i;
 	int	n;
-	long	value;
+	long long	value;
 
 	i = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)

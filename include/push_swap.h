@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:37:17 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/29 18:59:22 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/30 17:14:38 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 	struct s_stack	*target;
 }t_stack;
 
-void	stackadd_back(t_stack **stack, int nbr);
+int		stackadd_back(t_stack **stack, int nbr);
 int		is_duplicate(t_stack *stack, long nbr);
 t_stack	*stack_last(t_stack *stack);
 t_stack	*get_highest(t_stack *stack);

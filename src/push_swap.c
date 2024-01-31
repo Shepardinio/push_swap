@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:51:28 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/29 19:38:05 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/31 22:30:09 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,6 @@ int	main(int argc, char **argv)
 		else
 			sort(&stack_a, &stack_b);
 	}
-	print_stack(stack_a, stack_b);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
-	return (0);
-}
-
 	// t_stack *tmp;
 	// tmp = stack_a;
 	// while (tmp)
@@ -72,3 +66,7 @@ int	main(int argc, char **argv)
 	// 	printf("index->%d nb->%d target->%d aon->%d cheap->%d cost->%d\n", tmp->index, tmp->nb, tmp->target->nb, tmp->above, tmp->cheap ,tmp->cost);
 	// 	tmp = tmp->next;
 	// }
+	free_stack(&stack_a);
+	free_stack(&stack_b);
+	return (0);
+}

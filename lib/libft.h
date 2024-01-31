@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:45:03 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/16 14:58:45 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/30 17:33:07 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 
 int			ft_atoi(const char *str);
-long		ft_atol(const char *str);
+long long	ft_atol(const char *str);
 void		ft_bzero(void *s, size_t n);
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);

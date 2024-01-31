@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:57:04 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/22 16:19:17 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/30 12:57:27 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ void	free_split(char **arr)
 void	error_exit(t_stack **stack)
 {
 	free_stack(stack);
-	ft_putstr_fd("Errore\n", 2);
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }

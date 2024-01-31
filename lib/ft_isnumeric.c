@@ -6,15 +6,15 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:57:23 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/15 16:29:48 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:17:04 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isnumeric(char *str)
+int	ft_isnumeric(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')

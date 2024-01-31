@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 18:25:27 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/22 16:19:32 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:54:01 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	is_duplicate(t_stack *stack, long nbr)
 
 int	check_error(t_stack **stack_a, char *str)
 {
-	long	nbr;
+	long long	nbr;
 
 	if (!ft_isnumeric(str))
 		return (1);
@@ -36,6 +36,8 @@ int	check_error(t_stack **stack_a, char *str)
 		return (1);
 	if (!is_duplicate(*stack_a, nbr))
 		return (1);
-	stackadd_back(stack_a, nbr);
+	if (!stackadd_back(stack_a, nbr))
+		return (1);
+		
 	return (0);
 }

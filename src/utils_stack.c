@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:56:37 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/29 19:47:06 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:23:26 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,16 @@ t_stack	*stack_last(t_stack *stack)
 	return (stack);
 }
 
-void	stackadd_back(t_stack **stack, int nbr)
+int	stackadd_back(t_stack **stack, int nbr)
 {
 	t_stack	*new;
 	t_stack	*last;
 
 	if (stack == NULL)
-		return ;
+		return (0);
 	new = malloc(sizeof(t_stack));
 	if (new == NULL)
-		return ;
+		return (0);
 	new->nb = nbr;
 	new->next = NULL;
 	if (*stack == NULL)
@@ -73,4 +73,5 @@ void	stackadd_back(t_stack **stack, int nbr)
 		last = stack_last(*stack);
 		last->next = new;
 	}
+	return (1);
 }
