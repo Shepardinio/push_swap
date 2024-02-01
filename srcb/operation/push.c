@@ -6,11 +6,11 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 15:04:59 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/01 16:32:36 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:55:25 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "../../include/push_swap_bonus.h"
 
 void	pb(t_stack **stack_b, t_stack **stack_a)
 {
@@ -24,7 +24,6 @@ void	pb(t_stack **stack_b, t_stack **stack_a)
 	if (*stack_b)
 		tmp->next = *stack_b;
 	*stack_b = tmp;
-	write(1, "pb\n", 3);
 }
 
 void	pa(t_stack **stack_a, t_stack **stack_b)
@@ -40,5 +39,4 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 	if (*stack_a)
 		tmp->next = *stack_a;
 	*stack_a = tmp;
-	write(1, "pa\n", 3);
 }

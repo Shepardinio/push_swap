@@ -6,11 +6,11 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 17:51:45 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/01 16:34:09 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:55:52 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "../../include/push_swap_bonus.h"
 
 void	swap(t_stack **stack)
 {
@@ -27,18 +27,15 @@ void	swap(t_stack **stack)
 void	sa(t_stack **stack_a)
 {
 	swap(stack_a);
-	write(1, "sa\n", 3);
 }
 
 void	sb(t_stack **stack_b)
 {
 	swap(stack_b);
-	write(1, "sb\n", 3);
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
-	write(1, "ss\n", 3);
 }

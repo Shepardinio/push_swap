@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:49:01 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/22 16:19:54 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:33:45 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ void	rotate(t_stack **stack)
 void	ra(t_stack **stack_a)
 {
 	rotate(stack_a);
-	printf("ra\n");
+	write(1, "ra\n", 3);
 }
 
 void	rb(t_stack **stack_b)
 {
 	rotate(stack_b);
-	printf("rb\n");
+	write(1, "rb\n", 3);
 }
 
 void	rr(t_stack **stack_a, t_stack **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);
-	printf("rr\n");
+	write(1, "rr\n", 3);
 }

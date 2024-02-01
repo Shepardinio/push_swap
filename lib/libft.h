@@ -6,16 +6,22 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:45:03 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/30 17:33:07 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:31:17 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 
 int			ft_atoi(const char *str);
 long long	ft_atol(const char *str);
@@ -40,7 +46,7 @@ void		*ft_calloc(size_t nmemb, size_t size);
 char		**ft_split(char const *s, char c);
 char		*ft_strdup(const char *s);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
-char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin(char *s1, char *s2);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strchr(const char *src, int c);
 size_t		ft_strlcat(char *dest, const char *src, size_t size);
@@ -53,6 +59,7 @@ char		*ft_strrchr(const char *src, int c);
 char		*ft_strtrim(char const *s1, char const *set);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
+char		*get_next_line(int fd);
 
 typedef struct s_list
 {

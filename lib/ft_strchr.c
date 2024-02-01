@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:10:49 by mel-yand          #+#    #+#             */
-/*   Updated: 2023/11/28 16:11:46 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:24:32 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,26 @@
 
 char	*ft_strchr(const char *src, int c)
 {
+	if (src == NULL)
+		return (NULL);
 	while (*src)
 	{
-		if ((char)*src == (char)c)
+		if (*src == (char)c)
 			return ((char *)src);
 		src++;
 	}
-	if ((char)*src == (char)c)
-		return ((char *)src);
 	return (NULL);
 }
+
+// char	*ft_strchr(const char *src, int c)
+// {
+// 	while (*src)
+// 	{
+// 		if ((char)*src == (char)c)
+// 			return ((char *)src);
+// 		src++;
+// 	}
+// 	if ((char)*src == (char)c)
+// 		return ((char *)src);
+// 	return (NULL);
+// }

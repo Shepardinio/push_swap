@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 15:04:59 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/01 16:32:36 by mel-yand         ###   ########.fr       */
+/*   Created: 2024/01/17 20:49:01 by mel-yand          #+#    #+#             */
+/*   Updated: 2024/02/01 19:55:43 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "../../include/push_swap_bonus.h"
 
-void	pb(t_stack **stack_b, t_stack **stack_a)
+void	rotate(t_stack **stack)
 {
 	t_stack	*tmp;
-	
-	if (!*stack_a)
+	t_stack	*last;
+
+	if (!*stack)
 		return ;
-	tmp = *stack_a;
-	*stack_a = (*stack_a)->next;
+	tmp = *stack;
+	*stack = (*stack)->next;
 	tmp->next = NULL;
-	if (*stack_b)
-		tmp->next = *stack_b;
-	*stack_b = tmp;
-	write(1, "pb\n", 3);
+	last = stack_last(*stack);
+	last->next = tmp;
 }
 
-void	pa(t_stack **stack_a, t_stack **stack_b)
+void	ra(t_stack **stack_a)
 {
-	t_stack	*tmp;
+	rotate(stack_a);
+}
 
-	if (!stack_b)
-		return ;
-	
-	tmp = *stack_b;
-	*stack_b = (*stack_b)->next;
-	tmp->next = NULL;
-	if (*stack_a)
-		tmp->next = *stack_a;
-	*stack_a = tmp;
-	write(1, "pa\n", 3);
+void	rb(t_stack **stack_b)
+{
+	rotate(stack_b);
+}
+
+void	rr(t_stack **stack_a, t_stack **stack_b)
+{
+	rotate(stack_a);
+	rotate(stack_b);
 }

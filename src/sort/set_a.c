@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 16:22:48 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/31 23:58:51 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:03:22 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	redefine_cost(t_stack *a, int len_a, int len_b)
 	// {
 	// 	if (a->index <= a->target->index)
 	// 		a->cost -= (len_b - a->target->index);
-	// 	else
+	// 	else 
 	// 		a->cost -= (len_a - a->index);
 	// }
 }

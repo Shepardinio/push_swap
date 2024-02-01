@@ -49,3 +49,10 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+# BONUS =	check.c\
+
+# SRCALL = ${SRC} ${BONUS}
+# NAMEB = checker
+# SRCB_DIR = ./srcb
+# OBJB := $(SRCALL:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)

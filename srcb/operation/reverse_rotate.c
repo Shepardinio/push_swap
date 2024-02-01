@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 15:04:59 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/01 16:32:36 by mel-yand         ###   ########.fr       */
+/*   Created: 2024/01/18 17:30:41 by mel-yand          #+#    #+#             */
+/*   Updated: 2024/02/01 19:55:34 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "../../include/push_swap_bonus.h"
 
-void	pb(t_stack **stack_b, t_stack **stack_a)
+void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
-	
-	if (!*stack_a)
+	t_stack	*last;
+
+	if (!*stack)
 		return ;
-	tmp = *stack_a;
-	*stack_a = (*stack_a)->next;
+	tmp = *stack;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	last = stack_last(*stack);
 	tmp->next = NULL;
-	if (*stack_b)
-		tmp->next = *stack_b;
-	*stack_b = tmp;
-	write(1, "pb\n", 3);
+	last->next = *stack;
+	*stack = last;
 }
 
-void	pa(t_stack **stack_a, t_stack **stack_b)
+void	rra(t_stack **stack_a)
 {
-	t_stack	*tmp;
+	reverse_rotate(stack_a);
+}
 
-	if (!stack_b)
-		return ;
-	
-	tmp = *stack_b;
-	*stack_b = (*stack_b)->next;
-	tmp->next = NULL;
-	if (*stack_a)
-		tmp->next = *stack_a;
-	*stack_a = tmp;
-	write(1, "pa\n", 3);
+void	rrb(t_stack **stack_b)
+{
+	reverse_rotate(stack_b);
+}
+
+void	rrr(t_stack **stack_a, t_stack **stack_b)
+{
+	reverse_rotate(stack_a);
+	reverse_rotate(stack_b);
 }
