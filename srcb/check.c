@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 18:39:31 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/01 20:12:38 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:54:43 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	ft_check_input(t_stack **a, t_stack **b, char *input)
 
 void	ft_check(t_stack **a, t_stack **b, char *input)
 {
-	char *tmp;
-	
+	char	*tmp;
+
 	while (input)
 	{
 		tmp = input;
@@ -51,7 +51,7 @@ void	ft_check(t_stack **a, t_stack **b, char *input)
 		free(tmp);
 		input = get_next_line(0);
 	}
-	if (*b && !is_sorted_stack(a))
+	if (*b || !is_sorted_stack(a))
 		ft_putstr_fd("KO\n", 1);
 	else
 		ft_putstr_fd("OK\n", 1);

@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:57:23 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/30 14:17:04 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:50:54 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_isnumeric(char *str)
 		i++;
 	if (!str[i])
 		return (0);
-	while(str[i])
+	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
 			return (0);

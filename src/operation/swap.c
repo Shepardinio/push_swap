@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 17:51:45 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/01 16:34:09 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:52:49 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	swap(t_stack **stack)
 {
 	t_stack	*tmp;
-	
+
 	if (!*stack || !(*stack)->next)
 		return ;
 	tmp = *stack;

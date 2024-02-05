@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:11:13 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/01 17:51:11 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:53:38 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_three(t_stack **stack)
 {
-	t_stack *highest;
+	t_stack	*highest;
 
 	highest = get_highest(*stack);
 	if (highest->nb == (*stack)->nb)
@@ -31,17 +31,10 @@ void	sort(t_stack **a, t_stack **b)
 		pb(b, a);
 	if (!is_sorted_stack(a) && stack_len(*a) > 3)
 		pb(b, a);
-	// int i = 1;
-	// pb(b, a);
-	// pb(b, a);
-	// pb(b, a);
-	// pb(b, a);
-	// print_stack(*a, *b);
-	while (!is_sorted_stack(a) && stack_len(*a) > 3 /*&& i != 0*/)
+	while (!is_sorted_stack(a) && stack_len(*a) > 3)
 	{
 		get_cost_a(a, b);
 		a_to_b(a, b);
-		// i--;
 	}
 	sort_three(a);
 	while (*b)

@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:56:37 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/30 14:23:26 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:51:48 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	is_sorted_stack(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = *stack;
 	while (tmp->next)
@@ -28,7 +28,7 @@ int	is_sorted_stack(t_stack **stack)
 
 int	stack_len(t_stack *stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	int		i;
 
 	if (!stack)

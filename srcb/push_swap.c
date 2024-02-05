@@ -6,13 +6,13 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:51:28 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/01 19:53:15 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:55:19 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap_bonus.h"
 
-static int		arg_to_stack(t_stack **stack_a, char **argv)
+static int	arg_to_stack(t_stack **stack_a, char **argv)
 {
 	int		i;
 	int		j;
@@ -40,8 +40,8 @@ static int		arg_to_stack(t_stack **stack_a, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 	char	*input;
 
 	if (argc <= 1)

@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 18:55:04 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/29 19:37:27 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:53:18 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	find_target_b(t_stack *b, t_stack *a)
 
 void	b_to_a(t_stack **b, t_stack **a)
 {
-	t_stack *target;
+	t_stack	*target;
+
 	set_index(a);
 	set_index(b);
 	find_target_b(*b, *a);

@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:20:13 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/28 18:43:23 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:54:06 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	a_to_b(t_stack **a, t_stack **b)
 	t_stack	*cheap;
 
 	cheap = find_cheapest(*a);
-	if	(cheap->above == 0 && cheap->target->above == 0)
+	if (cheap->above == 0 && cheap->target->above == 0)
 		rotate_both(a, b, cheap);
 	else if (cheap->above == 1 && cheap->target->above == 1)
 		reverse_both(a, b, cheap);

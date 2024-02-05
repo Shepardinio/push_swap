@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:19 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/01/28 16:07:40 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:54:17 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_stack	*get_highest(t_stack *stack)
 	return (highest);
 }
 
-t_stack *get_lowest(t_stack *stack)
+t_stack	*get_lowest(t_stack *stack)
 {
 	t_stack	*lowest;
 

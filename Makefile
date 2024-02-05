@@ -1,58 +1,42 @@
 NAME = push_swap
-
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g3
-
-LIBFT = lib/libft.a
+CFLAGS = -Wall -Werror -Wextra
+LIBFT = ./lib/libft.a
 SRC_DIR = ./src
-SRC := 	error.c \
-		print_stack.c \
-		push_swap.c \
-		utils_stack.c\
-		utils_parsing.c\
-		./operation/swap.c\
-		./operation/push.c\
-		./operation/rotate.c\
-		./operation/reverse_rotate.c\
-		./sort/sort_utils.c\
-		./sort/sort.c\
-		./sort/sort_action.c\
-		./sort/set_a.c\
-		./sort/set_b.c
+SRC = $(shell find $(SRC_DIR) -name '*.c')
+OBJ = $(SRC:.c=.o)
 
-SRC := $(addprefix $(SRC_DIR)/, $(SRC))
-OBJ_DIR = obj
-OBJ := $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+NAMEB = checker
+SRCB_DIR = ./srcb
+SRCB = $(shell find $(SRCB_DIR) -name '*.c')
+OBJB = $(SRCB:.c=.o)
+
 
 all: $(NAME)
-	@printf "\e[32mPush Swap OK\e[0m\n"
-		
-$(NAME): $(OBJ)
-	@$(MAKE) -C lib
-	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(@D)
-	@$(CC) $(CFLAGS) -c $< -o $@ 
+$(NAME): $(OBJ)
+	$(MAKE) -C ./lib
+	$(CC) $(CFLAGS) -lm $(OBJ) $(LIBFT) -o $(NAME) -g
+
+bonus: $(OBJB)
+	$(MAKE) -C ./lib
+	$(CC) $(CFLAGS) -lm $(OBJB) $(LIBFT) -o $(NAMEB) -g
+
+$(NAMEB): bonus
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 norminette:
 	norminette $(SRC_DIR)
-	norminette lib
-	norminette ./include/
+	norminette ./includes/
 
 clean:
-	@$(MAKE) -C lib clean
-	@rm -rf $(OBJ_DIR)
+	$(MAKE) fclean -C ./lib
+	$(MAKE) clean -C ./lib
+	/bin/rm -f $(OBJ) $(OBJB)
 
 fclean: clean
-	@$(MAKE) -C lib fclean
-	@rm -f $(NAME)
+	/bin/rm -f $(NAME) $(NAMEB)
 
 re: fclean all
-
-# BONUS =	check.c\
-
-# SRCALL = ${SRC} ${BONUS}
-# NAMEB = checker
-# SRCB_DIR = ./srcb
-# OBJB := $(SRCALL:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
