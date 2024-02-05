@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 15:54:35 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/05 13:21:02 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/05 20:24:42 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,29 @@ int	ft_atoi(const char *str)
 	return (value * n);
 }
 
-/*#include <stdio.h>
-#include <stdlib.h>
+// int	ps_atoi(const char *str, int *error)
+// {
+// 	int	n;
+// 	int	value;
 
-int	main(void)
-{
-    char tab0[] = "           -42ad54";
-    char tab1[] = "           +42475ad54";
-    char tab2[] = "           -2147483647dskdj";
-    char tab3[] = "           +0";
-    char tab4[] = "           -2147483648dskdj";
-    char tab5[] = "           --233";
-
-    printf("%d:%d\n", ft_atoi(tab0), atoi(tab0));
-    printf("%d:%d\n", ft_atoi(tab1), atoi(tab1));
-    printf("%d:%d\n", ft_atoi(tab2), atoi(tab2));
-    printf("%d:%d\n", ft_atoi(tab3), atoi(tab3));
-    printf("%d:%d\n", ft_atoi(tab4), atoi(tab4));
-    printf("%d:%d\n", ft_atoi(tab5), atoi(tab5));
-    return (0);
-}*/
+// 	while ((*str >= 9 && *str <= 13) || *str == 32)
+// 		++str;
+// 	n = 1;
+// 	if (*str == '-' || *str == '+')
+// 	{
+// 		if (*str == '-')
+// 			n = -n;
+// 		++str;
+// 	}
+// 	value = 0;
+// 	while (*str && (*str >= '0' && *str <= '9'))
+// 	{
+// 		if ((value >= __INT_MAX__ / 10)
+// 			&& (((n == 1 && (*str - 48) > 7)
+// 					|| (n == -1 && (*str - 48) > 8))))
+// 			return (*error = 1, 0);
+// 		value = value * 10 + (*str - 48);
+// 		++str;
+// 	}
+// 	return (*error = 0, value * n);
+// }

@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:11:13 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/05 16:53:38 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/05 19:39:47 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,22 @@ void	sort_three(t_stack **stack)
 		rra(stack);
 	if ((*stack)->nb > (*stack)->next->nb)
 		sa(stack);
+}
+
+void	sort_five(t_stack **a, t_stack **b)
+{
+	t_stack	*tmp;
+
+	set_index(a);
+	tmp = get_lowest(*a);
+	node_top_a(a, tmp);
+	pb(b, a);
+	tmp = get_lowest(*a);
+	node_top_a(a, tmp);
+	pb(b, a);
+	sort_three(a);
+	pa(a, b);
+	pa(a, b);
 }
 
 void	sort(t_stack **a, t_stack **b)
