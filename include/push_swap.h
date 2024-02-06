@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:37:17 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/05 18:49:29 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:38:17 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ t_stack	*get_highest(t_stack *stack);
 t_stack	*get_lowest(t_stack *stack);
 int		stack_len(t_stack *stack);
 int		is_sorted_stack(t_stack **stack);
+void	sort_low(t_stack **a, t_stack **b);
 void	sort_three(t_stack **stack);
+void	sort_four(t_stack **a, t_stack **b);
 void	sort_five(t_stack **a, t_stack **b);
 void	sort(t_stack **s_a, t_stack **s_b);
 void	set_index(t_stack **stack);

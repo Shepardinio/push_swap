@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:51:28 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/05 18:47:35 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:33:24 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int	main(int argc, char **argv)
 			sa(&stack_a);
 		else if (stack_len(stack_a) == 3)
 			sort_three(&stack_a);
-		else if (stack_len(stack_a) == 5)
-			sort_five(&stack_a, &stack_b);
+		else if (stack_len(stack_a) == 4 || stack_len(stack_a) == 5)
+			sort_low(&stack_a, &stack_b);
 		else
 			sort(&stack_a, &stack_b);
 	}
