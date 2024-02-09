@@ -2,15 +2,34 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 LIBFT = ./lib/libft.a
-SRC_DIR = ./src
-SRC = $(shell find $(SRC_DIR) -name '*.c')
+SRC =	./src/operation/push.c\
+		./src/operation/reverse_rotate.c\
+		./src/operation/rotate.c\
+		./src/operation/swap.c\
+		./src/sort/set_a.c\
+		./src/sort/set_b.c\
+		./src/sort/sort_action.c\
+		./src/sort/sort_utils.c\
+		./src/sort/sort.c\
+		./src/error.c\
+		./src/print_stack.c\
+		./src/push_swap.c\
+		./src/utils_parsing.c\
+		./src/utils_stack.c
 OBJ = $(SRC:.c=.o)
 
 NAMEB = checker
-SRCB_DIR = ./srcb
-SRCB = $(shell find $(SRCB_DIR) -name '*.c')
+SRCB =	./srcb/operation/push.c\
+		./srcb/operation/reverse_rotate.c\
+		./srcb/operation/rotate.c\
+		./srcb/operation/swap.c\
+		./srcb/check.c\
+		./srcb/error.c\
+		./srcb/print_stack.c\
+		./srcb/push_swap.c\
+		./srcb/utils_parsing.c\
+		./srcb/utils_stack.c
 OBJB = $(SRCB:.c=.o)
-
 
 all: $(NAME)
 
@@ -26,10 +45,6 @@ $(NAMEB): bonus
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-
-norminette:
-	norminette $(SRC_DIR)
-	norminette ./includes/
 
 clean:
 	$(MAKE) fclean -C ./lib

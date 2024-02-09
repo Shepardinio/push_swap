@@ -6,7 +6,7 @@
 /*   By: mel-yand <mel-yand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:49:01 by mel-yand          #+#    #+#             */
-/*   Updated: 2024/02/05 16:52:41 by mel-yand         ###   ########.fr       */
+/*   Updated: 2024/02/09 16:25:57 by mel-yand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	rotate(t_stack **stack)
 	t_stack	*tmp;
 	t_stack	*last;
 
-	if (!*stack)
-		return ;
 	tmp = *stack;
+	if (!*stack || tmp->next == NULL)
+		return ;
 	*stack = (*stack)->next;
 	tmp->next = NULL;
 	last = stack_last(*stack);
